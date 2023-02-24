@@ -11,9 +11,6 @@ const Weather_main = ({ weather }) => {
     temp: toCel(weather.main.temp),
     humidity: weather.main.humidity,
   };
-  console.log(weather.weather[0].icon);
-
-  console.log(weather);
   return (
     <div className='weather_container weather__main'>
       <p className='title'>
