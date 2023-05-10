@@ -8,7 +8,6 @@ export default function Home({ weather }) {
 
 export const getServerSideProps = async () => {
   const weather = await getWeather('kostanay');
-
   return {
     props: { weather }
   };
