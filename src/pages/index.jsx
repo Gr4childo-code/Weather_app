@@ -10,11 +10,17 @@ export default function Home({ weather }) {
     const weather = await getWeather(e.current.value);
     setCity(weather);
   };
-
+  console.log(city);
   return (
     <div className='container'>
       <SearchForm search={handleSearchCity} />
-      {city && <Weather data={city} search={handleSearchCity} />}
+      {city.cod == '404' ? (
+        <div className='error'>
+          Error {city.cod} {city.message}
+        </div>
+      ) : (
+        <Weather data={city} search={handleSearchCity} />
+      )}
     </div>
   );
 }

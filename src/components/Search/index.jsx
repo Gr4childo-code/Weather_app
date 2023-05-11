@@ -5,8 +5,7 @@ import { RiSearchLine, RiMenu4Line } from 'react-icons/ri';
 import styles from '@/src/components/Search/Search.module.scss';
 
 const SearchForm = ({ search }) => {
-  const inputRef = useRef(null);
-
+  const inputRef = useRef('Введите город');
   return (
     <div className={styles.weather__header}>
       <div className={styles.weather__header__content}>
@@ -20,6 +19,7 @@ const SearchForm = ({ search }) => {
             type='text'
             className={styles.weather__header__content__search__input}
             ref={inputRef}
+            placeholder={'Введите город'}
           />
         </div>
         <RiMenu4Line size={30} />
